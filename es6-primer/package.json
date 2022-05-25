@@ -1,0 +1,12 @@
+{
+  "name": "es6-primer",
+  "version": "1.0.0",
+  "description": "A package being used to learn TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "George Uwagbale",
+  "license": "MIT",
+  "type": "module"
+}
