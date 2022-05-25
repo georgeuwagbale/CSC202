@@ -1,3 +1,6 @@
 "use strict";
-console.log("Testing");
+function greeting(name) {
+    console.log("Hello " + name);
+}
+greeting(`George`);
 //# sourceMappingURL=index.js.map
