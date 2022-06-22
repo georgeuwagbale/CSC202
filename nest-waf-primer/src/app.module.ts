@@ -3,8 +3,6 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { StudentRegistrationModule } from './student-registration/student-registration.module';
-import {User} from "./student-registration/users/entities/user.entity";
-import {Student} from "./student-registration/students/entities/student.entity";
 
 @Module({
   imports: [TypeOrmModule.forRoot(
@@ -15,7 +13,7 @@ import {Student} from "./student-registration/students/entities/student.entity";
   "username": "georgeuwagbale",
   "password": "realghost16",
   "database": "nestwafprimer",
-  "entities": [ User, Student],
+  "entities": ["dist/**/*.entity{.ts,.js}"],
   "synchronize": true
 }
   ), StudentRegistrationModule],
