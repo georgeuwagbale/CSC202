@@ -18,8 +18,8 @@ const HelloWorld5: React.FC<Props> = (props) => {
     })
 
     useEffect(() => {
-        window.alert(`Hello ${name}, be aware that you have clicke ${count} times.`)
-    })
+        window.alert(`Hello ${name}, be aware that you have click ${count} times.`)
+    }, [count])
 
     return(
         <div>
