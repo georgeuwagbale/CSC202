@@ -1,17 +1,18 @@
 version: '3'
 services:
   database:
-    container_name: postgres-csc2020
-    image: postgres:latest
+    container_name: postgres-csc202
+    image: ubuntu/postgres
     ports:
-      - "5433:5432"
+      - "5432:5432"
     volumes:
       - /home/georgeuwagbale/Documents/csc202-2020set:/data/postgres
     env_file:
-      - csc2020.env
+      - csc202.env
+
 
   web:
-    container_name: nginx-csc2020
+    container_name: nginx-csc202
     build:
       context: .
       dockerfile: nginx-primer/Dockerfile
@@ -19,6 +20,19 @@ services:
      - 80:80
      - 443:443
     extra_hosts:
-      - "app-server:10.9.189.40"
+      - "app_server:192.168.160.1"
+    depends_on:
+      - database
 
- 
+  pgadmin:
+    container_name: pgadmin-csc202
+    image: dpage/pgadmin4:latest
+    ports:
+      - 8081:80
+    volumes:
+      - /home/georgeuwagbale/Documents/csc202-2020set:/root/.pgadmin
+    env_file:
+      - csc202.env
+    depends_on:
+      - database
+
