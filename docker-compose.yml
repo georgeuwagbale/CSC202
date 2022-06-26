@@ -4,7 +4,7 @@ services:
     container_name: postgres-csc202
     image: ubuntu/postgres
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - /home/georgeuwagbale/Documents/csc202-2020set:/data/postgres
     env_file:
@@ -20,7 +20,7 @@ services:
      - 80:80
      - 443:443
     extra_hosts:
-      - "app_server:192.168.160.1"
+      - "app_server:172.20.10.3"
     depends_on:
       - database
 
